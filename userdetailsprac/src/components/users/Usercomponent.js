@@ -5,7 +5,7 @@ import Button from '../ui/Button.js';
 import Errormodal from '../ui/Errormodal';
 
 const Usercomponent = (props) => {
-
+console.log('usercomp');
         const [uname, usernamestate] = useState('');
         const [uage, useragestate] = useState();
         const [error , errorstate] = useState();

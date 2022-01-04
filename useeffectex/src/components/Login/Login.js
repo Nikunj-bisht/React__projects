@@ -10,7 +10,7 @@ const Login = (props) => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
-
+console.log(props);
 const [mailvalid , funtoupdatestate] = useReducer((state , action)=>{
 
 if(action.type === 'USER_INPUT'){

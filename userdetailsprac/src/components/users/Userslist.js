@@ -1,7 +1,7 @@
 import classes from './Userslist.module.css';
 
 const Userslist = (props) => {
-console.log(props);
+console.log('userlist');
 const {list} = props;
     return (
 <ul>
