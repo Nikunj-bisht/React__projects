@@ -7,17 +7,17 @@ import Singlemeal from './Singlemeal';
 
 const Mealoptions = () => {
 
-    const [val, valstate] = useState(false);
+    // const [val, valstate] = useState(false);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        setTimeout(() => {
-            console.log(33);
-            valstate(true);
-        }, 3000);
+    //     setTimeout(() => {
+    //         console.log(33);
+    //         valstate(true);
+    //     }, 3000);
 
 
-    }, []);
+    // }, []);
 
     console.log(DUMMY_MEALS);
 

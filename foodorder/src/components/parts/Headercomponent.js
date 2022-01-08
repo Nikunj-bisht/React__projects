@@ -3,7 +3,13 @@ import classes from './Headercomponent.module.css';
 import mealimage from '../../assests/meals.jpg';
 import Cartbutton from '../UI/Cartbutton';
 
-const Headercomponent = () =>{
+const Headercomponent = (props) =>{
+
+const showstatefunction = () => {
+
+props.funtoshowmodal();
+
+}
 
 return (
 
@@ -11,7 +17,7 @@ return (
 
 <header className={classes.header}>
     <h1>Meals</h1>
-    <Cartbutton></Cartbutton>
+    <Cartbutton showmfun = {showstatefunction}></Cartbutton>
 </header>
 <div className={classes['main-image']}>
     <img src={mealimage}></img>
