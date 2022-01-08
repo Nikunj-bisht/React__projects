@@ -10,7 +10,8 @@ function addtocart(event){
 
   event.preventDefault();
 console.log(amount.current.value);
-
+const amount_num = +amount.current.value;
+props.mealchoosed(amount_num);
 }
 
 const Input = React.forwardRef((props,ref)=>{

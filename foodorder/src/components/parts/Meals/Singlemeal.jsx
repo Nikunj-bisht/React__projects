@@ -1,10 +1,24 @@
 import classes from './Singlemeal.module.css';
 import Mealform from './Mealform';
+import { useContext } from 'react';
+import { Cart_context } from '../../store/Cartcontext';
 
 const Singlemeal = (props) => {
 
 
   const { mealobj } = props;
+const cartcontext = useContext(Cart_context);
+  function addtocart (meal_amount){
+
+cartcontext.additem({
+id:mealobj.id,
+name:mealobj.name,
+amount:meal_amount,
+price:mealobj.price
+})
+
+  }
+
   return (
 
     <li className={classes.meal}>
@@ -16,7 +30,7 @@ const Singlemeal = (props) => {
 
       <div>
 
-        <Mealform></Mealform>
+        <Mealform mealchoosed = {addtocart}></Mealform>
       </div>
 
     </li>

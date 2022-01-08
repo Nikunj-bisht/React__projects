@@ -1,27 +1,19 @@
-
+import { useContext } from "react";
+import { Cart_context } from "../store/Cartcontext";
+import CartItem from "./CartItem";
 
  export function Cartorder () {
 
-    const  DUMMY_MEALS = [
-        {
-          id: 'm1',
-          name: 'Sushi',
-          amount:2,
-          price: 22.99,
-        },
-        {
-          id: 'm2',
-          name: 'Schnitzel',
-          amount:3,
-          price: 16.5,
-        }];
-    
+const cart_context = useContext(Cart_context);
 
 return (
 
 <ul>
     {
-        DUMMY_MEALS.map(single=><li>{single.name}</li>)
+        cart_context.items.map(single=><CartItem 
+                               price = {single.price}
+                               amount = {single.amount}
+                               ></CartItem>)
     }
 </ul>
 
