@@ -18,5 +18,9 @@ Syntax
  const [state , funtocallstate] = usereducer(reducercallback (takes 2 input last updated value and action that occured) , initial_state , initfun)
 
 
+# React context
 
+Use to store and share data b/w components
+
+React.createcontext({ object }) return a context object
 
