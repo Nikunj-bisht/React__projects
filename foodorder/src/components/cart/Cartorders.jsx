@@ -2,22 +2,37 @@ import { useContext } from "react";
 import { Cart_context } from "../store/Cartcontext";
 import CartItem from "./CartItem";
 
- export function Cartorder () {
+export function Cartorder() {
 
-const cart_context = useContext(Cart_context);
+    const cart_context = useContext(Cart_context);
 
-return (
+    function itemincreased(item) {
 
-<ul>
-    {
-        cart_context.items.map(single=><CartItem 
-                               price = {single.price}
-                               amount = {single.amount}
-                               ></CartItem>)
+        cart_context.additem({...item , amount:1});
+
     }
-</ul>
 
-);
+    function itemdec(item) {
+
+  cart_context.removeitem({...item , amount : 1});
+
+    }
+
+    return (
+
+        <ul>
+            {
+                cart_context.items.map(single => <CartItem
+                    id={single.id}
+                    price={single.price}
+                    amount={single.amount}
+                    onAdd={itemincreased.bind(null , single)}
+                    onRemove={itemdec.bind(null , single)}
+                ></CartItem>)
+            }
+        </ul>
+
+    );
 
 
 }
