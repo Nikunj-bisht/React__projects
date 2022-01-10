@@ -24,10 +24,10 @@ function App() {
     
       }
       
-    const new_total_am = state.totalamount + action.item.amount * action.item.price;
 
     if (action.type === 'ADD') {
 
+      const new_total_am = state.totalamount + action.item.amount * action.item.price;
 
       const item_index = find_index();
 
@@ -68,7 +68,11 @@ function App() {
       }
 
 update_items_array[item_index] = update_item_object; 
+const new_total_am = state.totalamount -  action.item.price;
 
+if(update_item_object.amount === 0){
+update_items_array.splice(item_index , 1);
+}
       return {
         items : update_items_array , 
         totalamount : new_total_am

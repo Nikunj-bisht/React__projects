@@ -1,13 +1,16 @@
 import classes from './Cartcomponent.module.css';
 import { Cartorder } from './Cartorders';
 import { Modalcomp } from './Modal';
+import { useContext } from 'react';
+import { Cart_context } from '../store/Cartcontext';
 
 const Cartcomponent = (props) => {
+
+    const cart_cxt = useContext(Cart_context);
 
     const closethemodal = () => {
 
         props.hidecartfun();
-
 
     }
 
@@ -25,7 +28,7 @@ const Cartcomponent = (props) => {
             <div className={classes.total}>
 
                 <div>Total amount</div>
-                <div>100</div>
+                <div>{cart_cxt.totalamount}</div>
             </div>
             <div>
                 <button onClick={closethemodal}>Close</button>
